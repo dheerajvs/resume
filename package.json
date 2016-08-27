@@ -1,0 +1,27 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "Resume",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server ./dist",
+    "pug": "pug --pretty -O resume.json -w -o ./dist jade/index.jade"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dheerajvs/resume.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "Dheeraj V S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dheerajvs/resume/issues"
+  },
+  "homepage": "https://github.com/dheerajvs/resume#readme",
+  "devDependencies": {
+    "live-server": "^1.1.0",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
