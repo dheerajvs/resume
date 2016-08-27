@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server ./dist",
-    "pug": "pug --pretty -O resume.json -w -o ./dist jade/index.jade"
+    "pug": "pug --pretty -O resume.json -w -o ./dist jade/index.pug"
   },
   "repository": {
     "type": "git",

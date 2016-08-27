@@ -1,6 +1,7 @@
 {
   "config": {
-    "lang": "en"
+    "lang": "en",
+    "gaId": ""
   },
   "basics": {
     "name": "John Doe",
