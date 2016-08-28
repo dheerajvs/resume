@@ -1,1 +1,85 @@
-extends ./layout
+extends ./resume-layout
+include ./mixins
+
+block title
+  title= basics.name
+
+block header
+  header
+    section.title
+      h1= basics.name
+      p= basics.label
+    address
+      ul
+        li
+          a(href='tel://' + basics.phone)= basics.phone
+        li
+          a(href='mailto://' + basics.email)= basics.email
+        each profile in basics.profiles
+          +profile(profile)
+
+block about
+  +section('about')
+    p= basics.summary
+
+block experience
+  +section('experience')
+    ol
+      each workItem in work
+        li
+          h3= workItem.company
+          span= workItem.position
+          span
+            +time(workItem.startDate)
+            | ~
+            +time(workItem.endDate)
+          p= workItem.summary
+          ul
+            each highlightItem in workItem.highlights
+              li= highlightItem
+
+block skills
+  +section('skills')
+    ul
+      each skill in skills
+        li
+          h3= skill.name
+          ul
+            each keyword in skill.keywords
+              li= keyword
+
+block education
+  +section('education')
+    ol
+      each educationItem in education
+        li
+          h3= studyType
+          span= educationItem.area
+          span= educationItem.institution
+          span
+            +time(educationItem.startDate)
+            | ~
+            +time(educationItem.endDate)
+          span= educationItem.gpa
+
+block languages
+  +section('languages')
+    ul
+      each language in languages
+        li
+          span= language.name
+          span= language.level
+
+block interests
+  +section('interests')
+  ul
+    each interest in interests
+      li= interest.name
+
+block references
+  +section('references')
+    ul
+      each reference in references
+        li
+          q= reference.reference
+          span= reference.name
