@@ -6,6 +6,10 @@ block title
 
 block header
   header
+    amp-img(
+      src='data:image/svg+xml;utf8,' + basics.config.qr, alt='qr-code',
+      width=100, height=100
+    )
     h1= basics.name
     p= basics.label
     address
