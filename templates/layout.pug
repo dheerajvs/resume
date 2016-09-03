@@ -1,9 +1,9 @@
 doctype html
-html(⚡, lang=config.lang)
+html(⚡, lang=basics.config.lang)
   head
     meta(charset='utf-8')
     block title
-    link(rel='canonical', href=config.canonical)
+    link(rel='canonical', href=basics.config.canonical)
     meta(
       name='viewport',
       content='width=device-width,minimum-scale=1,initial-scale=1'
@@ -15,7 +15,7 @@ html(⚡, lang=config.lang)
       style(amp-boilerplate)
         | body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
 
-    if config.ga
+    if basics.config.ga
       script(
         async, custom-element='amp-analytics',
         src='https://cdn.ampproject.org/v0/amp-analytics-0.1.js'
@@ -27,7 +27,7 @@ html(⚡, lang=config.lang)
     block header
     block content
 
-    if config.ga
+    if basics.config.ga
       amp-analytics#analytics1(type='googleanalytics')
         script(type='application/json')
-          !=JSON.stringify(config.ga)
+          !=JSON.stringify(basics.config.ga)

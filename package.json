@@ -1,11 +1,12 @@
 {
-  "name": "resume",
+  "name": "jsonresume-theme-progressive",
   "version": "1.0.0",
-  "description": "Resume",
+  "description": "Progressive theme for JSON Resume using PWA, AMP and JSON-LD technologies",
   "main": "index.js",
   "scripts": {
-    "start": "live-server ./dist",
-    "pug": "pug --pretty -O resume.json -w -o ./dist templates/index.pug"
+    "start": "resume serve",
+    "serve": "live-server ./public",
+    "pug": "pug --pretty -O resume.json -w -o ./public templates/index.pug"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   "homepage": "https://github.com/dheerajvs/resume#readme",
   "devDependencies": {
     "live-server": "^1.1.0",
-    "pug-cli": "^1.0.0-alpha6"
+    "pug-cli": "^1.0.0-alpha6",
+    "resume-cli": "^0.4.13"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-beta6"
   }
 }

@@ -1,20 +1,20 @@
 {
-  "config": {
-    "lang": "en",
-    "canonical": "http://example.org/resume",
-    "ga": {
-      "vars": {
-        "account": "UA-XXXXX-Y"
-      },
-      "triggers": {
-        "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
+  "basics": {
+    "config": {
+      "lang": "en",
+      "canonical": "http://example.org/resume",
+      "ga": {
+        "vars": {
+          "account": "UA-XXXXX-Y"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
         }
       }
-    }
-  },
-  "basics": {
+    },
     "name": "John Doe",
     "label": "Programmer",
     "picture": "",
