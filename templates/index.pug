@@ -5,21 +5,23 @@ block title
   title= basics.name
 
 block header
-  header
-    amp-img(
-      src='data:image/svg+xml;utf8,' + basics.config.qr, alt='qr-code',
-      width=100, height=100
-    )
-    h1= basics.name
-    p= basics.label
-    address
-      ul
-        li
-          a(href='tel://' + basics.phone)= basics.phone
-        li
-          a(href='mailto://' + basics.email)= basics.email
-        each profile in basics.profiles
-          +profile(profile)
+  header.header
+    div.header-title
+      h1= basics.name
+      p= basics.label
+    div.header-address
+      amp-img(
+        src='data:image/svg+xml;utf8,' + qr, alt='qr-code',
+        width=100, height=100
+      )
+      address
+        ul
+          li
+            a(href='tel://' + basics.phone)= basics.phone
+          li
+            a(href='mailto://' + basics.email)= basics.email
+          each profile in basics.profiles
+            +profile(profile)
 
 block about
   +section('about')
