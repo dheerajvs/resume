@@ -10,13 +10,24 @@ mixin ga(gaId)
 
 mixin profile(profile)
   li
-    a(href=profile.url)= profile.url
+    +profileIcon(profile)
+    a(href=profile.url)= profile.username
 
-mixin section(type)
-  section
-    h2= type
+mixin profileIcon(profile)
+  if profile.network == 'Github'
+    span.fa.fa-github
+  if profile.network == 'Twitter'
+    span.fa.fa-twitter
+
+mixin section(type, icon)
+  section.article-section
+    header
+      h2
+        span.section-icon(class='fa ' + icon)
+        span= type
     if block
-      block
+      .section-body
+        block
 
 mixin time(date)
   time(datetime=date)= date

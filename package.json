@@ -8,6 +8,7 @@
     "pug": "pug --pretty -O resume.json -w -o ./public templates/index.pug",
     "resume": "resume serve",
     "scss": "sass --watch styles:styles",
+    "scss_prod": "sass --force --style compressed --update styles:styles",
     "serve": "live-server ./public"
   },
   "repository": {

@@ -17,7 +17,7 @@
   "basics": {
     "name": "John Doe",
     "label": "Programmer",
-    "picture": "",
+    "picture": "https://www.gravatar.com/avatar/00000000000000000000000000000000?s=80&d=mm",
     "email": "john@gmail.com",
     "phone": "(912) 555-4321",
     "website": "http://johndoe.com",

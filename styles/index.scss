@@ -1,14 +1,6 @@
-.container {
-}
+@import 'font-awesome-4.6.3/scss/font-awesome';
 
-header.header {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.header-address {
-  display: flex;
-  flex-wrap: wrap;
-}
+@import 'variables';
+@import 'normalize';
+@import 'reset';
+@import 'layout';

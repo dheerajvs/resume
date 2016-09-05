@@ -5,30 +5,43 @@ block title
   title= basics.name
 
 block header
-  header.header
-    div.header-title
-      h1= basics.name
-      p= basics.label
-    div.header-address
-      amp-img(
-        src='data:image/svg+xml;utf8,' + qr, alt='qr-code',
-        width=100, height=100
-      )
-      address
-        ul
-          li
-            a(href='tel://' + basics.phone)= basics.phone
-          li
-            a(href='mailto://' + basics.email)= basics.email
-          each profile in basics.profiles
-            +profile(profile)
+  header.basics
+    amp-img.picture(src=basics.picture, alt='picture', width=80, height=80)
+    .title
+      h1.name= basics.name
+      div.label= basics.label
+
+block address
+  amp-img.qr(
+    src='data:image/svg+xml;utf8,' + qr, alt='qr-code',
+    width=80, height=80
+  )
+  address.profiles
+    ul.list
+      li
+        span.fa.fa-map-marker
+        span= basics.location.city + ', ' + basics.location.countryCode
+      li
+        span.fa.fa-phone
+        a(href='tel://' + basics.phone)= basics.phone
+      li
+        span.fa.fa-envelope
+        a(href='mailto://' + basics.email)= basics.email
+      each profile in basics.profiles
+        if profile.network != 'StackOverflow'
+          +profile(profile)
+  div.so-flair-container
+    amp-img.so-flair(
+      src='http://stackoverflow.com/users/flair/165674.png?theme=clean',
+      alt='Stack Overflow flair', width=208, height=58
+    )
 
 block about
-  +section('about')
+  +section('About', 'fa-user')
     p= basics.summary
 
 block experience
-  +section('experience')
+  +section('Experience', 'fa-building')
     each workItem in work
       section
         header
@@ -44,7 +57,7 @@ block experience
             li= highlightItem
 
 block skills
-  +section('skills')
+  +section('Skills', 'fa-wrench')
     each skill in skills
       section
         h3= skill.name
@@ -53,7 +66,7 @@ block skills
             li= keyword
 
 block education
-  +section('education')
+  +section('Education', 'fa-graduation-cap')
     each educationItem in education
       section
         header
@@ -66,22 +79,22 @@ block education
           +time(educationItem.endDate)
         div= educationItem.gpa
 
+block interests
+  +section('Interests', 'fa-heart')
+    ul
+      each interest in interests
+        li= interest.name
+
 block languages
-  +section('languages')
+  +section('Languages', 'fa-language')
     ul
       each language in languages
         li
           span= language.name
           span= language.level
 
-block interests
-  +section('interests')
-  ul
-    each interest in interests
-      li= interest.name
-
 block references
-  +section('references')
+  +section('References', 'fa-thumbs-up')
     ul
       each reference in references
         li

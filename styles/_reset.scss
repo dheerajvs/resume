@@ -1,0 +1,22 @@
+a {
+  color: $accent-text-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
