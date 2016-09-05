@@ -57,12 +57,12 @@ block experience
     each workItem in work
       section
         header
+          h3= workItem.position
           div.date
             +time(workItem.startDate)
             |&nbsp;–&nbsp;
             +time(workItem.endDate)
-          h3= workItem.company
-          p= workItem.position
+          a(href=workItem.website)= workItem.company
         p= workItem.summary
         ul
           each highlightItem in workItem.highlights
