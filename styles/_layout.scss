@@ -1,19 +1,21 @@
 .container {
-  margin-right: auto;
-  margin-left: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  margin: 48px auto;
+  width: 75%;
 }
 
-// ---
+.segment {
+  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
+  padding: 16px 8px;
+}
 
 .basics {
   align-items: center;
   display: flex;
-  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
-  padding: 16px 0;
 
   .picture {
     border-radius: 40px;
-    margin: 0 8px 0 16px;
+    margin: 0 8px;
   }
 
   .title {
@@ -25,11 +27,9 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
-  padding: 16px 0;
 
   .qr {
-    margin: 0 8px 0 16px;
+    margin: 0 8px;
   }
 
   .profiles {
@@ -42,6 +42,7 @@
   }
 
   .so-flair-container {
+    align-self: flex-end;
     overflow: hidden;
     width: 150px;
 
@@ -52,15 +53,43 @@
 }
 
 .article-section {
-  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
-  padding-bottom: 16px;
-
   .section-icon {
-    margin-right: 8px;
+    margin: 0 8px;
     width: 24px;
   }
 
+  .section-title{
+    margin: 0 8px;
+  }
+
   .section-body {
-    margin-left: 32px;
+    margin-left: 48px;
+  }
+}
+
+.experience, .education {
+  .date {
+    float: right;
+    margin-right: 8px;
+  }
+}
+
+.education {
+  .gpa {
+    float: right;
+    margin-right: 8px;
+  }
+}
+
+.skills, .languages, .interests {
+  li {
+    display: inline;
+
+    &::after {
+      content: ", ";
+    }
+    &:last-child::after {
+      content: "";
+    }
   }
 }

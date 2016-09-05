@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2409,9 +2410,14 @@ a {
 address {
   font-style: normal; }
 
-h1 {
-  font-size: 2.5em;
+h1, h2, h3, h4, h5, h6, p {
   margin: 0; }
+
+h1 {
+  font-size: 2.5em; }
+
+h3 {
+  margin-top: 8px; }
 
 ol, ul {
   list-style: none;
@@ -2419,28 +2425,29 @@ ol, ul {
   padding: 0; }
 
 .container {
-  margin-right: auto;
-  margin-left: auto; }
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  margin: 48px auto;
+  width: 75%; }
+
+.segment {
+  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
+  padding: 16px 8px; }
 
 .basics {
   align-items: center;
-  display: flex;
-  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
-  padding: 16px 0; }
+  display: flex; }
   .basics .picture {
     border-radius: 40px;
-    margin: 0 8px 0 16px; }
+    margin: 0 8px; }
   .basics .title {
     margin: 0 8px; }
 
 .address {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
-  padding: 16px 0; }
+  flex-wrap: wrap; }
   .address .qr {
-    margin: 0 8px 0 16px; }
+    margin: 0 8px; }
   .address .profiles {
     margin: 0 8px; }
     .address .profiles .fa {
@@ -2448,18 +2455,33 @@ ol, ul {
       text-align: center;
       width: 16px; }
   .address .so-flair-container {
+    align-self: flex-end;
     overflow: hidden;
     width: 150px; }
     .address .so-flair-container .so-flair {
       left: -58px; }
 
-.article-section {
-  box-shadow: rgba(139, 69, 19, 0.14902) 0px 2px 1px -1px;
-  padding-bottom: 16px; }
-  .article-section .section-icon {
-    margin-right: 8px;
-    width: 24px; }
-  .article-section .section-body {
-    margin-left: 32px; }
+.article-section .section-icon {
+  margin: 0 8px;
+  width: 24px; }
+.article-section .section-title {
+  margin: 0 8px; }
+.article-section .section-body {
+  margin-left: 48px; }
+
+.experience .date, .education .date {
+  float: right;
+  margin-right: 8px; }
+
+.education .gpa {
+  float: right;
+  margin-right: 8px; }
+
+.skills li, .languages li, .interests li {
+  display: inline; }
+  .skills li::after, .languages li::after, .interests li::after {
+    content: ", "; }
+  .skills li:last-child::after, .languages li:last-child::after, .interests li:last-child::after {
+    content: ""; }
 
 /*# sourceMappingURL=index.css.map */

@@ -5,7 +5,7 @@ block title
   title= basics.name
 
 block header
-  header.basics
+  header.segment.basics
     amp-img.picture(src=basics.picture, alt='picture', width=80, height=80)
     .title
       h1.name= basics.name
@@ -20,7 +20,10 @@ block address
     ul.list
       li
         span.fa.fa-map-marker
-        span= basics.location.city + ', ' + basics.location.countryCode
+        a(
+          href='https://www.google.com/maps?q=' +
+            basics.location.city + ',' + basics.location.countryCode
+        )= basics.location.city + ', ' + basics.location.countryCode
       li
         span.fa.fa-phone
         a(href='tel://' + basics.phone)= basics.phone
@@ -40,22 +43,6 @@ block about
   +section('About', 'fa-user')
     p= basics.summary
 
-block experience
-  +section('Experience', 'fa-building')
-    each workItem in work
-      section
-        header
-          h3= workItem.company
-          div= workItem.position
-          div
-            +time(workItem.startDate)
-            | ~
-            +time(workItem.endDate)
-        p= workItem.summary
-        ul
-          each highlightItem in workItem.highlights
-            li= highlightItem
-
 block skills
   +section('Skills', 'fa-wrench')
     each skill in skills
@@ -65,19 +52,35 @@ block skills
           each keyword in skill.keywords
             li= keyword
 
+block experience
+  +section('Experience', 'fa-building')
+    each workItem in work
+      section
+        header
+          div.date
+            +time(workItem.startDate)
+            |&nbsp;–&nbsp;
+            +time(workItem.endDate)
+          h3= workItem.company
+          p= workItem.position
+        p= workItem.summary
+        ul
+          each highlightItem in workItem.highlights
+            li= highlightItem
+
 block education
   +section('Education', 'fa-graduation-cap')
     each educationItem in education
       section
         header
-          h3= studyType
-          div= educationItem.area
-        div= educationItem.institution
-        div
-          +time(educationItem.startDate)
-          | ~
-          +time(educationItem.endDate)
-        div= educationItem.gpa
+          div.date
+            +time(educationItem.startDate)
+            |&nbsp;–&nbsp;
+            +time(educationItem.endDate)
+          h3= educationItem.studyType
+        p.gpa= educationItem.gpa
+        p= educationItem.area
+        p= educationItem.institution
 
 block interests
   +section('Interests', 'fa-heart')
@@ -89,9 +92,7 @@ block languages
   +section('Languages', 'fa-language')
     ul
       each language in languages
-        li
-          span= language.name
-          span= language.level
+        li= language.name
 
 block references
   +section('References', 'fa-thumbs-up')

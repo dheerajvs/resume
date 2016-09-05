@@ -4,8 +4,8 @@
   "description": "Progressive theme for JSON Resume using PWA, AMP and JSON-LD technologies",
   "main": "index.js",
   "scripts": {
-    "start": "resume serve",
-    "pug": "pug --pretty -O resume.json -w -o ./public templates/index.pug",
+    "start": "resume serve -r resume-dheeraj.json",
+    "pug": "pug --pretty -O resume-dheeraj.json -w -o ./public templates/index.pug",
     "resume": "resume serve",
     "scss": "sass --watch styles:styles",
     "scss_prod": "sass --force --style compressed --update styles:styles",

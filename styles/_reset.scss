@@ -10,9 +10,16 @@ address {
   font-style: normal;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 h1 {
   font-size: 2.5em;
-  margin: 0;
+}
+
+h3 {
+  margin-top: 8px;
 }
 
 ol, ul {
